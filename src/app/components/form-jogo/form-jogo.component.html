@@ -1,33 +1,30 @@
 
 <div class="form-group m-5">
-    <form>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col">
                 <label for="nomeJogo"><h3>Nome do jogo</h3></label>
-                <input type="text" class="form-control mt-2" id="nomeJogo" placeholder="Inserir nome do jogo">
+                <input type="text" class="form-control mt-2" id="nome" name="nome" [(ngModel)]="this.jogo.nome" placeholder="Inserir nome do jogo" required="">
                 <div class="plataforma-radio mt-5">
                     <h3>Plataforma</h3>
                     <div class="form-check mt-3">
-                        <input type="radio" class="form-check-input" id="plataformaPS" name="plataformaPS" placeholder="Inserir nome do jogo">
-                        <label for="plataformaPS"><p>Playstation</p></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="plataformaXbox" name="plataformaXbox"placeholder="Inserir nome do jogo">
-                        <label for="plataformaXbox"><p>Xbox</p></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="plataformaPC" name="plataformaPC" placeholder="Inserir nome do jogo">
-                        <label for="plataformaPC"><p>PC</p></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="plataformaNintendo" name="plataformaNintendo" placeholder="Inserir nome do jogo">
+                        <input type="radio" class="form-check-input" id="plataformaPS" name="plataforma" [(ngModel)]="this.jogo.plataforma" value="Playstation" placeholder="Inserir nome do jogo">
+                        <label for="plataformaPS"><p>Playstation</p></label><br>
+        
+                        <input type="radio" class="form-check-input" id="plataformaXbox" name="plataforma"  [(ngModel)]="this.jogo.plataforma" value="Xbox"placeholder="Inserir nome do jogo">
+                        <label for="plataformaXbox"><p>Xbox</p></label><br>
+     
+                        <input type="radio" class="form-check-input" id="plataformaPC" name="plataforma"  [(ngModel)]="this.jogo.plataforma" value="PC" placeholder="Inserir nome do jogo">
+                        <label for="plataformaPC"><p>PC</p></label><br>
+  
+                        <input type="radio" class="form-check-input" id="plataformaNintendo" name="plataforma"  [(ngModel)]="this.jogo.plataforma" value="Nintendo" placeholder="Inserir nome do jogo">
                         <label for="plataformaNintendo"><p>Nintendo</p></label>
                     </div>
                 </div>
-                <div class="form-group mt-5">
+                <div class="mt-5">
                     <label for="status-dropdown"><h3>Status</h3></label>
-                    <select class="form-control mt-3" id="status-dropdown">
-                      <option>- Selecione -</option>
+                    <select class="form-control mt-3" id="status-dropdown" name="status" [(ngModel)]="this.status" >
+                      <option disable selected value="">- Selecione -</option>
                       <option>Backlog</option>
                       <option>Jogando</option>
                       <option>Concluido</option>
@@ -36,15 +33,19 @@
             </div>
             <div class="col">
                 <label for="dataInicio"><h3>Data Inicio</h3></label>
-                <input type="date" class="form-control mt-2" id="dataInicio" placeholder="Inserir nome do jogo">
+                <input type="date" class="form-control mt-2" id="dataInicio" name="dataInicio" [(ngModel)]="this.jogo.dataInicio">
                 <label class="mt-5"for="dataFim"><h3>Data Fim</h3></label>
-                <input type="date" class="form-control mt-2" id="dataFim" placeholder="Inserir nome do jogo">
+                <input type="date" class="form-control mt-2" id="dataFim" name="dataFim" [(ngModel)]="this.jogo.dataFim">
                 <h3 class="mt-5">Conqusitas</h3>
                 <div class="form-check  mt-3">
-                    <input type="checkbox" class="form-check-input" id="conquistas" placeholder="Inserir nome do jogo">
+                    <input type="checkbox" class="form-check-input" id="conquistas" name="conquistas" [(ngModel)]="this.jogo.conquistas">
                     <label for="conquistas"><p>100%</p></label>
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary m-4" type="button" (click)="onReset()" >Limpar</button>
+            <button class="btn btn-success m-4" type="submit">Salvar</button>
         </div>
     </form>
 </div>
