@@ -7,13 +7,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormJogoComponent } from './components/form-jogo/form-jogo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { AddJogoComponent } from './add-jogo/add-jogo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FormJogoComponent,
-    FooterComponent
+    FooterComponent,
+    AddJogoComponent
   ],
   imports: [
     BrowserModule,
