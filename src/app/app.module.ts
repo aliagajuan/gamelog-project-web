@@ -8,6 +8,10 @@ import { FormJogoComponent } from './components/form-jogo/form-jogo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AddJogoComponent } from './add-jogo/add-jogo.component';
+import { CardGameComponent } from './components/card-game/card-game.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { GameListComponent } from './home-page/game-list/game-list.component';
+import { EditJogoPageComponent } from './edit-jogo-page/edit-jogo-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { AddJogoComponent } from './add-jogo/add-jogo.component';
     NavbarComponent,
     FormJogoComponent,
     FooterComponent,
-    AddJogoComponent
+    AddJogoComponent,
+    CardGameComponent,
+    HomePageComponent,
+    GameListComponent,
+    EditJogoPageComponent
   ],
   imports: [
     BrowserModule,

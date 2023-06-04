@@ -1,0 +1,19 @@
+.card-container{
+    padding: 10px;
+    border: 2px solid #BBB6B6;
+    border-radius: 5%;
+    width: 290px;
+    height: 220px;
+    margin: 0.25em;
+    h3{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.card-description{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
