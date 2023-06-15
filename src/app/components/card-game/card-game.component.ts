@@ -15,16 +15,4 @@ export class CardGameComponent {
 
   }
 
-  convertDate(date:Date){
-    var dd = String(date.getDate()).padStart(2, '0');
-    var mm = String(date.getMonth() + 1).padStart(2, '0');
-    var yyyy = date.getFullYear();
-    let dateFormat = mm + '/' + dd + '/' + yyyy;
-    return dateFormat;
-  }
-
-  ngOnInit(){
-    this.dataInicio = this.convertDate(this.jogo.dataInicio)
-    this.dataFim = this.convertDate(this.jogo.dataFim)
-  }
 }

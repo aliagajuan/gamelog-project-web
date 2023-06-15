@@ -1,8 +1,8 @@
 <div class="card-container" >
     <h3>{{this.jogo.nome}}</h3>
     <p class="card-description">
-        Data Inicio: {{this.dataInicio}}<br>
-        Data Fim: {{this.dataFim}}<br>
+        Data Inicio: {{this.jogo._dataInicio.toLocaleString()}}<br>
+        Data Fim: {{this.jogo._dataFim.toLocaleString()}}<br>
         Plataforma: {{this.jogo.plataforma}}<br>
         Status: {{this.jogo.status}}
     </p>
