@@ -14,9 +14,7 @@ export class JogosService {
 
   private readonly API = `${environment.API}games`
 
-  gamelist!:Jogo[]
   constructor(private http:HttpClient) { 
-    this.gamelist=JSON.parse(localStorage.getItem('gamelist')!);
   }
 
   save(_jogo:Jogo){
