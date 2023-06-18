@@ -1,0 +1,34 @@
+{
+  "games": [
+    {
+      "_dataInicio": "2023-06-18T14:43:16.210Z",
+      "_dataFim": "2023-06-18T14:43:16.210Z",
+      "nome": "Final Fantasy teste",
+      "conquistas": true,
+      "plataforma": "Xbox",
+      "status": "Concluido",
+      "id": 1
+    },
+    {
+      "nome": "123123",
+      "_dataInicio": "2023-06-12",
+      "plataforma": "Playstation",
+      "status": "Backlog",
+      "id": 5
+    },
+    {
+      "nome": "asdasd",
+      "plataforma": "Xbox",
+      "status": "Jogando",
+      "_dataInicio": "2023-06-15",
+      "id": 6
+    },
+    {
+      "nome": "12312",
+      "plataforma": "Playstation",
+      "status": "Jogando",
+      "_dataInicio": "2023-06-15",
+      "id": 7
+    }
+  ]
+}

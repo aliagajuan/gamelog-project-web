@@ -12,6 +12,8 @@ import { CardGameComponent } from './components/card-game/card-game.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { GameListComponent } from './home-page/game-list/game-list.component';
 import { EditJogoPageComponent } from './edit-jogo-page/edit-jogo-page.component';
+import { JogosService } from './services/jogos.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,9 @@ import { EditJogoPageComponent } from './edit-jogo-page/edit-jogo-page.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [JogosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

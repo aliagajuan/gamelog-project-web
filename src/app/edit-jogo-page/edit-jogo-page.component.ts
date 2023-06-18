@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Jogo } from '../model/jogo';
+import { JogosService } from '../services/jogos.service';
 
 @Component({
   selector: 'app-edit-jogo-page',
@@ -9,25 +10,15 @@ import { Jogo } from '../model/jogo';
 })
 export class EditJogoPageComponent {
 
-  idJogo!:number
+  @Output() idJogo!:number
 
   jogoEditar!:Jogo;
 
-  constructor(private route:ActivatedRoute){
-    console.log(this.route)
+  jogosService:JogosService
 
+  constructor(private route:ActivatedRoute, _jogosService:JogosService){
+    this.jogosService=_jogosService
     this.idJogo = this.route.snapshot.params['id'];
-    console.log(this.idJogo)
   }
 
-  ngOnInit(){
-    let gamelist:Array<Jogo>
-    gamelist = JSON.parse(localStorage.getItem('gamelist')!);
-
-    gamelist.forEach(item => {
-      if(item.id==this.idJogo){
-        this.jogoEditar=item;
-      }
-   });
-  }
 }

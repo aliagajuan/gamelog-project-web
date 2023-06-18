@@ -4,12 +4,10 @@ export class Jogo{
     plataforma?:string;
     status?:string;
     conquistas?:boolean;
-    _dataInicio:Date;
-    _dataFim:Date;
+    _dataInicio!:Date;
+    _dataFim?:Date;
 
     constructor(){
-        this._dataInicio = new Date()
-        this._dataFim = new Date()
     }
 
 

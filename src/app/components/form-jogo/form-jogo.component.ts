@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Jogo } from 'src/app/model/jogo';
+import { JogosService } from 'src/app/services/jogos.service';
 
 @Component({
   selector: 'app-form-jogo',
@@ -8,27 +9,49 @@ import { Jogo } from 'src/app/model/jogo';
   styleUrls: ['./form-jogo.component.scss']
 })
 export class FormJogoComponent {
-  jogo:Jogo;
+  @Input() idJogo?:number;
 
-  constructor(){
+  jogo!:Jogo;
+  jogosService:JogosService
+
+  constructor(_jogosService:JogosService){
     this.jogo = new Jogo()
+    this.jogosService=_jogosService;
   }
   onSubmit(){
-    let gamelist:Array<Jogo>
-    gamelist = JSON.parse(localStorage.getItem('gamelist')!);
-    this.jogo.id = gamelist.length + 1;
-    gamelist.push(this.jogo)
+    if(this.idJogo!=null){
+      //Editar
+      this.jogosService.update(this.jogo).subscribe(sucess=>console.log('alterado com sucesso')
+      ,error=>console.log('erro'));
 
-    localStorage.setItem(`gamelist`,JSON.stringify(gamelist))
-    window.alert(`${this.jogo.nome} foi adicionado com sucesso!`)
-    /*this.jogo.status=this.status
-    localStorage.setItem(`jogo`,JSON.stringify(this.jogo))
-    
-    this.jogo = new Jogo();*/
+      window.alert(`${this.jogo.nome} foi alterado com sucesso!`)
+    }else{
+      //Adicionar
+      this.jogosService.save(this.jogo).subscribe(sucess=>console.log('sucesso')
+      ,error=>console.log('erro'))
+      window.alert(`${this.jogo.nome} foi adicionado com sucesso!`)
+    }
   }
   onReset(){
     this.jogo = new Jogo();
     this.jogo.status=""
   }
+  ngOnInit(){
+    if(this.idJogo != null){
+      this.jogosService.getJogobyId(this.idJogo).subscribe(data=>this.jogo=data)
+      console.log(this.idJogo)
+      console.log(this.jogo.nome)
+    }
+    else{
+      this.jogo = new Jogo()
+    }
+   }
 
+   onDelete(){
+    if(this.idJogo != null){ 
+      this.jogosService.delete(this.idJogo).subscribe(sucess=>console.log('sucesso')
+      ,error=>console.log('erro'))
+      window.alert(`Jogo deletado com sucesso!`);
+    }
+   }
 }
