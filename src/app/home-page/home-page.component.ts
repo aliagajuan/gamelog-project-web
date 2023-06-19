@@ -9,13 +9,4 @@ import { JogosService } from '../services/jogos.service';
 })
 export class HomePageComponent {
 
-  @Output()  gamelist!: Array<Jogo>;
-  jogosService:JogosService
-  constructor(_jogosService:JogosService){
-  this.jogosService=_jogosService;
-  }
-
-  ngOnInit(){
-    this.jogosService.getJogos().subscribe(data =>this.gamelist=data);
-  }
 }
