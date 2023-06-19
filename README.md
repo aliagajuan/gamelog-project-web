@@ -18,5 +18,5 @@ https://www.figma.com/file/M9fww1y4YnqmTFkCwtZCqF/Gamelog?type=design&node-id=7%
 - [x] Cadastrar uma entidade usando uma API (JSON Server).
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
-- [ ] Formatar a apresentação de dados com Pipes.
+- [x] Formatar a apresentação de dados com Pipes.
 - [ ] Build e deploy da aplicação.
