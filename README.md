@@ -19,4 +19,7 @@ https://www.figma.com/file/M9fww1y4YnqmTFkCwtZCqF/Gamelog?type=design&node-id=7%
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.
+
+# Para executar o projeto
+Ative a base de dados com o comando: json-server --watch db.json
