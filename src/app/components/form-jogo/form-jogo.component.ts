@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subject, catchError, empty } from 'rxjs';
 import { Jogo } from 'src/app/model/jogo';
 import { JogosService } from 'src/app/services/jogos.service';
@@ -16,7 +17,7 @@ export class FormJogoComponent {
   jogosService: JogosService
  
 
-  constructor(_jogosService: JogosService) {
+  constructor(_jogosService: JogosService, private _router:Router) {
     this.jogosService = _jogosService;
   }
   onSubmit() {
@@ -26,7 +27,7 @@ export class FormJogoComponent {
         .subscribe(
           sucess => {
             window.alert(`${this.jogo.nome} foi alterado com sucesso!`),
-              window.location.href = "/";
+            this._router.navigate(['']);
           }
           , error => window.alert("Erro ao enviar a alteração, tente novamente"));
 
@@ -35,7 +36,7 @@ export class FormJogoComponent {
       this.jogosService.save(this.jogo).subscribe(
         sucess => {
           window.alert(`${this.jogo.nome} foi adicionado com sucesso!`);
-          window.location.href = "/";
+          this._router.navigate(['']);
         }
         , error => window.alert("Erro ao adicionar jogo, tente novamente"));
     }
@@ -50,7 +51,7 @@ export class FormJogoComponent {
         .pipe(
           catchError(error => {
             window.alert("Erro ao buscar jogo selecionado, tente novamente")
-            window.location.href = "/";
+            this._router.navigate(['']);
             return empty();
           })
         )
@@ -70,7 +71,7 @@ export class FormJogoComponent {
       this.jogosService.delete(this.idJogo).subscribe(sucess => {
         console.log('sucesso')
         window.alert(`Jogo deletado com sucesso!`);
-        window.location.href = "/";
+        this._router.navigate(['']);
       }
         , error => {
           console.log('Erro ao deletar'),
