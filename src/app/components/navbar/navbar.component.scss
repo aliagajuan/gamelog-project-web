@@ -1,0 +1,22 @@
+.navbar-gamelog {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #45936C;
+    color: white;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+        color:white;
+    }
+  }
+
+  .navbar-gamelog h1{
+    margin:  20px;
+    font-weight: 500;
+  }

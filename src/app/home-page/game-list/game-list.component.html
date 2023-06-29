@@ -1,0 +1,23 @@
+<ul class="cards-container" *ngIf="gamelist$ | async; else loadingGames">
+    <li *ngFor="let f of gamelist$ | async">
+        <app-card-game [jogo]="f"></app-card-game>
+    </li>
+</ul>
+<ng-template #loadingGames>
+    <div class="d-flex justify-content-center mt-5" *ngIf="this.error$|async; else loading">
+        <button class="btn btn-dark ml-4 " type="button" (click)="carregarLista()">
+            <h5>Erro ao carregar a lista de jogos, tente novamente</h5>
+        </button>
+    </div>
+    <ng-template #loading>
+        <div class="d-flex justify-content-center mt-5">
+            <h4>Carregando a lista de jogos...</h4>
+        </div>
+    </ng-template>
+</ng-template>
+
+<div class="d-flex justify-content-center" *ngIf="(gamelist$ | async)?.length==0">
+    <a class="btn btn-success mt-5" routerLink="/adicionar-jogo">
+        <h5>Adicione um jogo para vizualizar aqui</h5>
+    </a>
+</div>

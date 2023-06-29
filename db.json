@@ -1,0 +1,36 @@
+{
+  "games": [
+    {
+      "_dataInicio": "2023-06-18T14:43:16.210Z",
+      "_dataFim": "2023-06-18T14:43:16.210Z",
+      "nome": "Final Fantasy",
+      "conquistas": true,
+      "plataforma": "Xbox",
+      "status": "Concluido",
+      "id": 1
+    },
+    {
+      "nome": "Super Mario",
+      "plataforma": "Nintendo",
+      "status": "Jogando",
+      "_dataInicio": "2023-06-15",
+      "id": 6
+    },
+    {
+      "nome": "Cyberpunk 2077",
+      "plataforma": "PC",
+      "status": "Concluido",
+      "_dataInicio": "2023-06-07",
+      "_dataFim": "2023-06-30",
+      "conquistas": true,
+      "id": 8
+    },
+    {
+      "nome": "Baldurs Gate",
+      "plataforma": "PC",
+      "status": "Backlog",
+      "_dataInicio": "2023-08-31",
+      "id": 9
+    }
+  ]
+}

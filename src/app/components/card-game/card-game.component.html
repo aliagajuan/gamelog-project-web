@@ -1,0 +1,13 @@
+<div class="card-container" >
+    <h3>{{this.jogo.nome}}</h3>
+    <p class="card-description">
+        Data Inicio: {{this.jogo._dataInicio| date:"dd/MM/yyyy"}}<br>
+        Data Fim: {{this.jogo._dataFim  | date:"dd/MM/yyyy"}}<br>
+        Plataforma: {{this.jogo.plataforma}}<br>
+        <b>Status: {{this.jogo.status}}</b>
+    </p>
+    <a class="btn btn-success mt-2" routerLinkActive="active" [routerLink]="['editar/jogo',this.jogo.id]">
+        Editar
+    </a>
+</div>
+
